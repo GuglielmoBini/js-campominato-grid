@@ -30,8 +30,8 @@ footer > h4 {
   margin: 0 auto;
 }
 
-#grid.black-br {
-  border: 1px solid black;
+#grid .lets-play {
+  font-size: 60px;
 }
 
 #grid .cell {
@@ -39,4 +39,12 @@ footer > h4 {
   height: calc(100% / 10);
   border: 2px solid black;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+#grid .cell.clicked {
+  background-color: aqua;
 }

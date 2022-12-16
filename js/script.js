@@ -28,10 +28,19 @@ Note:
 
 //-----------------------------------------------------------------
 
+// FUNZIONI
+const createCell = (content) => {
+  const cell = document.createElement("div");
+  cell.append(content);
+  cell.classList.add("cell");
+  return cell;
+};
+
 // raccolgo gli elementi dal DOM
 
 const playButton = document.getElementById("play-button");
 const grid = document.getElementById("grid");
+const playTitle = document.getElementById("play-title");
 
 //impostazioni iniziali
 
@@ -41,10 +50,20 @@ const totalCells = rows * cols;
 
 // applico event listener al bottone
 playButton.addEventListener("click", function () {
-  for (let i = 0; i < totalCells; i++) {
-    const cell = document.createElement("div");
-    cell.classList.add("cell");
+  for (let i = 1; i <= totalCells; i++) {
+    // creo una cella
+    const cell = createCell(i);
+    // applico event listener alla cella
+    cell.addEventListener("click", function () {
+      cell.classList.add("clicked");
+      // restituisco in console il numero della cella che ho cliccato
+      console.log("Hai cliccato:" + " " + i);
+    });
+    // appendo la cella in pagina
     grid.appendChild(cell);
-    grid.classList.add("black-br");
+    // aggiungo e rimuovo classi
+    grid.classList.add("align-content-start", "flex-wrap");
+    grid.classList.remove("justify-content-center", "align-items-center");
+    playTitle.classList.add("d-none");
   }
 });
