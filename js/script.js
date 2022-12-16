@@ -27,3 +27,24 @@ Note:
 */
 
 //-----------------------------------------------------------------
+
+// raccolgo gli elementi dal DOM
+
+const playButton = document.getElementById("play-button");
+const grid = document.getElementById("grid");
+
+//impostazioni iniziali
+
+const rows = 10;
+const cols = 10;
+const totalCells = rows * cols;
+
+// applico event listener al bottone
+playButton.addEventListener("click", function () {
+  for (let i = 0; i < totalCells; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    grid.appendChild(cell);
+    grid.classList.add("black-br");
+  }
+});

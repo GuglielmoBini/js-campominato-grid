@@ -27,8 +27,11 @@ footer > h4 {
 #grid {
   width: 700px;
   height: 700px;
-  border: 1px solid black;
   margin: 0 auto;
+}
+
+#grid.black-br {
+  border: 1px solid black;
 }
 
 #grid .cell {
