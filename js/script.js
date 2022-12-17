@@ -50,12 +50,14 @@ const totalCells = rows * cols;
 
 // applico event listener al bottone
 playButton.addEventListener("click", function () {
+  // reset della griglia alla pressione del bottone
+  grid.innerHTML = "";
   for (let i = 1; i <= totalCells; i++) {
     // creo una cella
     const cell = createCell(i);
     // applico event listener alla cella
     cell.addEventListener("click", function () {
-      cell.classList.add("clicked");
+      cell.classList.toggle("clicked");
       // restituisco in console il numero della cella che ho cliccato
       console.log("Hai cliccato:" + " " + i);
     });
